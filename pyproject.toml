@@ -1,0 +1,24 @@
+[project]
+name = "mob-tfm"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "gitmobkab",email = "richmondaurel77@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "typer (>=0.20.0,<0.21.0)",
+    "faker (>=38.2.0,<39.0.0)",
+    "mariadb (>=1.1.14,<2.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "mob_tfm", from = "src"}]
+
+[tool.poetry.scripts]
+tfm = "mob_tfm.main:app"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
