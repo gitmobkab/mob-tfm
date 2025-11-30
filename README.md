@@ -142,7 +142,7 @@ $ tfm config [OPTIONS]
 
 ## `tfm help`
 
-Open and page the documentation for one or more commands from `docs/commands/README.&lt;command&gt;.md`.
+Open and page the documentation for one or more commands from `docs/commands/README.<command>.md`.
 
 **Usage**:
 
