@@ -1,4 +1,4 @@
-# lastname()
+# phone()
 
 ## A TFM generator that returns a random phone number in any country norm (US, CI, EU,  ...)
 
