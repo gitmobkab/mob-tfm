@@ -25,7 +25,7 @@ def get_available_commands() -> tuple[str, ...]:
 
 
 @app.command()
-def help(
+def explain(
 	commands: str,
 	pretty: bool = typer.Option(False,"-p", "--pretty",help="force activation markdown styling/ may cause issue on old terminals")
 ):
