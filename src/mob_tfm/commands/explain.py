@@ -27,7 +27,7 @@ def get_available_commands() -> tuple[str, ...]:
 @app.command()
 def help(
 	commands: str,
-	pretty: bool = typer.Option(default=False, help="force activation markdown styling/ may cause issue on old terminals")
+	pretty: bool = typer.Option(False,"-p", "--pretty",help="force activation markdown styling/ may cause issue on old terminals")
 ):
 	"""
 	Open and page the documentation for one or more commands from `docs/commands/README.<command>.md`.

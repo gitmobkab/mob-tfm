@@ -1,11 +1,11 @@
-from .main import app as mob_tfm_app
+from .main import app 
 from .exceptions import *
 from .utils import utils,db_utils,generate_utils,parse_utils,tfm_generators
 
 
 
 __all__ = [
-    'mob_tfm_app',
+    'app',
     'InvalidColumnFormat', 
     'InvalidGeneratorArgumentFormat', 
     'UnknownGenerator',
@@ -18,5 +18,5 @@ __all__ = [
     'parse_utils',
     'tfm_generators']
 
-__version__ = "1.0.0"
+__version__ = "0.1.0"
 
