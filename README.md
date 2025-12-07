@@ -2,19 +2,25 @@
 
 A set of tools to quick up MySql/MariaDB table prototyping
 
-**Usage**:
+
+## **Installation**:
+```bash
+$ pip install mob-tfm
+```
+
+### **Usage**:
 
 ```console
 $ tfm [OPTIONS] COMMAND [ARGS]...
 ```
 
-**Options**:
+### **Options**:
 
 * `--install-completion`: Install completion for the current shell.
 * `--show-completion`: Show completion for the current shell, to copy it or customize the installation.
 * `--help`: Show this message and exit.
 
-**Commands**:
+# **Commands**:
 
 * `version`: Show the current version of Mob TFM.
 * `unspine`: &#x27;Unspine&#x27;/print the doc of a list of tfm...
@@ -28,13 +34,13 @@ $ tfm [OPTIONS] COMMAND [ARGS]...
 
 Show the current version of Mob TFM.
 
-**Usage**:
+### **Usage**:
 
-```console
+```bash
 $ tfm version [OPTIONS]
 ```
 
-**Options**:
+### **Options**:
 
 * `--help`: Show this message and exit.
 
@@ -42,17 +48,17 @@ $ tfm version [OPTIONS]
 
 &#x27;Unspine&#x27;/print the doc of a list of tfm generators inside of a pager (alternative screen)
 
-**Usage**:
+### **Usage**:
 
-```console
+```bash
 $ tfm unspine [OPTIONS] GENERATORS
 ```
 
-**Arguments**:
+### **Arguments**:
 
 * `GENERATORS`: [required]
 
-**Options**:
+### **Options**:
 
 * `-p / --pretty`: force activation markdown styling/ may cause issue on old terminals
 * `--help`: Show this message and exit.
@@ -62,13 +68,13 @@ $ tfm unspine [OPTIONS] GENERATORS
 Show information about Mob TFM.
 Can be considered as a &#x27;about&#x27; command.
 
-**Usage**:
+### **Usage**:
 
-```console
+```bash
 $ tfm doctor [OPTIONS]
 ```
 
-**Options**:
+### **Options**:
 
 * `--help`: Show this message and exit.
 
@@ -76,17 +82,17 @@ $ tfm doctor [OPTIONS]
 
 fill a mariaDB/MySQL database table with data contained in a csv file.
 
-**Usage**:
+### **Usage**:
 
-```console
+```bash
 $ tfm parse [OPTIONS] FILE
 ```
 
-**Arguments**:
+### **Arguments**:
 
 * `FILE`: [required]
 
-**Options**:
+### **Options**:
 
 * `-u, --user TEXT`: Database user name 
 * `-P, --password TEXT`: Database user password 
@@ -102,17 +108,17 @@ $ tfm parse [OPTIONS] FILE
 
 fill a mariaDB/MySQL database table with fake data based on a format string.
 
-**Usage**:
+### **Usage**:
 
 ```console
 $ tfm generate [OPTIONS] FORMAT
 ```
 
-**Arguments**:
+### **Arguments**:
 
 * `FORMAT`: [required]
 
-**Options**:
+### **Options**:
 
 * `-s, --seed INTEGER`: Seed for the random generator.
 * `-u, --user TEXT`: Database user name.
@@ -130,13 +136,13 @@ $ tfm generate [OPTIONS] FORMAT
 
 Create or Edit the configuration for better use of tfm.
 
-**Usage**:
+### **Usage**:
 
-```console
+```bash
 $ tfm config [OPTIONS]
 ```
 
-**Options**:
+### **Options**:
 
 * `-v, --view`: View current configuration
 * `--help`: Show this message and exit.
@@ -145,18 +151,18 @@ $ tfm config [OPTIONS]
 
 Open and page the documentation for one or more commands from `docs/commands/README.<command>.md`.
 
-**Usage**:
+### **Usage**:
 
 ```console
 $ tfm explain [OPTIONS] COMMANDS
 ```
  
 
-**Arguments**:
+### **Arguments**:
 
 * `COMMANDS`: [required]
 
-**Options**:
+### **Options**:
 
 * `-p / --pretty`: force activation markdown styling/ may cause issue on old terminals.
 * `--help`: Show this message and exit.
