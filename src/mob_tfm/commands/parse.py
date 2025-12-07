@@ -21,7 +21,7 @@ def parse( file: Path,
             host: str = typer.Option(config["user"]["host"], "--host","-h" ,help="The Databse host", rich_help_panel="Database Connection"),
             port: int = typer.Option(config["user"]["port"], "--port", "-p",help="The database port", rich_help_panel="Database Connection"),
             rows: int = typer.Option(config["parse"]["rows"], "--rows", "-r" ,help="Number of rows to read (can be negative)", rich_help_panel="Filling parameters"),
-            preview_only: bool = typer.Option(False, help="If True tfm won't try to fill the table, only preview them, default to False", rich_help_panel="Filling parameters")        
+            preview_only: bool = typer.Option(False, help="If --preview tfm won't to fill the table, only preview them", rich_help_panel="Filling parameters")        
 ):
     """
     fill a mariaDB/MySQL database table with data contained in a csv file.
@@ -77,6 +77,7 @@ def parse( file: Path,
 
     echo(f"Connection to {database} established","success")
     preview_table = Table("row",*columns_names,title=table,show_lines=True,highlight=True)
+    exit_code = 0
     try:
         insert_query = build_insert_query(columns_names,table)
         with Live(preview_table):
@@ -93,10 +94,8 @@ def parse( file: Path,
                 preview_table.add_row(f"{count}",*row)
                 count += 1
                 row_number = count - 1
-        exit_code = 0
     except StopIteration:
         echo("Hit maximum rows contained in file !","info")
-        exit_code = 0
     except mariadb.Error as error:
         echo(f"Unable to insert data on row {row_number}:\n{error}","error")
         conn.rollback()
