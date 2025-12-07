@@ -14,7 +14,7 @@ GENERATORS_NAMES = tuple(GENERATORS.keys())
 @app.command()
 def unspine(
             generators: str,
-            pretty: bool = typer.Option(default=False,help="force activation markdown styling/ may cause issue on old terminals")
+            pretty: bool = typer.Option(False,"-p","--pretty",help="force activation markdown styling/ may cause issue on old terminals")
             ):
     """
     'Unspine'/print the doc of a list of tfm generators inside of a pager (alternative screen)
