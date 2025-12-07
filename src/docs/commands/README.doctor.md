@@ -3,22 +3,22 @@
 Show information about the local TFM installation and environment. This command is a quick
 diagnostic and 'about' view that helps when troubleshooting or reporting issues.
 
-Usage:
+# **Usage**:
 
-```
+```bash
 $ tfm doctor
 ```
 
-What it shows:
+# **What it shows**:
 
 - Package information (version, author, repository)
 - Runtime environment (OS, Python version, Python executable path)
 - Installed/required dependencies
 - List of available commands and the presence of the configuration file
 
-Example:
+# **Example**:
 
-```
+```bash
 $ tfm doctor
 ```
 

@@ -2,30 +2,30 @@
 
 Load data from a CSV file and insert it into a MariaDB/MySQL database table.
 
-Usage:
+# **Usage**:
 
-```
+```bash
 $ tfm parse [OPTIONS] FILE
 ```
 
-Arguments:
+# **Arguments**:
 
 - `FILE`: Path to the CSV file to parse.
 
-Common options:
+# **Options**:
 
-- `--user TEXT`: Database user name.
-- `--password TEXT`: Database user password.
-- `--database TEXT`: Database name.
-- `--table TEXT`: Database table name.
-- `--host TEXT`: Database host.
-- `--port INTEGER`: Database port.
-- `--rows INTEGER`: Maximum rows to process (used for preview/testing).
+- `-u`, `--user TEXT`: Database user name.
+- `-P`, `--password TEXT`: Database user password.
+- `-d`, `--database TEXT`: Database name.
+- `-t`, `--table TEXT`: Database table name.
+- `-h`, `--host TEXT`: Database host. **[default: localhost]**
+- `-p`, `--port INTEGER`: Database port. **[default: 3306]**
+- `-r`, `--rows INTEGER`: Maximum rows to process, negative value means no limit (only for --no-preview--only) **[default: 20]**.
 - `--preview-only / --no-preview-only`: If set, only preview data instead of inserting.
 
-Examples:
+# **Examples**:
 
-```
+```bash
 $ tfm parse students.csv --table students --preview-only
 ```
 

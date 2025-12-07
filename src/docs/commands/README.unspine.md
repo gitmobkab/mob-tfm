@@ -2,29 +2,29 @@
 
 Open and page the documentation for one or more generator files located in `docs/generators/`.
 
-Usage:
+# **Usage**:
 
-```
+```bash
 $ tfm unspine GENERATORS [OPTIONS]
 ```
 
-Arguments:
+# **Arguments**:
 
 - `GENERATORS`: One or more generator names separated by spaces (e.g. `name firstname`).
 
-Options:
+# **Options**:
 
 - `--pretty`: Enable extra styling when rendering the markdown.
 
-Behavior:
+# **Behavior**:
 
 - For each generator name provided the command reads `docs/generators/README.<generator>.md`
 	and opens it in a pager.
 - If an unknown generator is requested the command prints an error and lists available generators.
 
-Example:
+# **Example**:
 
-```
+```bash
 $ tfm unspine name firstname
 ```
 

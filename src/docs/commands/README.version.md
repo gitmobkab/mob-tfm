@@ -1,22 +1,22 @@
 ## `tfm version`
 
-Show the current version and metadata about the `tfm` package.
+Show the current version and metadata about the `mob-tfm` package.
 
-Usage:
+# **Usage**:
 
-```
+```bash
 $ tfm version
 ```
 
-Output includes:
+# **Output includes**:
 
 - Package version
 - Author
 - Creation date or release information
 
-Example:
+# **Example**:
 
-```
+```bash
 $ tfm version
 ```
 

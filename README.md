@@ -22,7 +22,7 @@ $ tfm [OPTIONS] COMMAND [ARGS]...
 * `parse`: fill a mariaDB/MySQL database table with...
 * `generate`: fill a mariaDB/MySQL database table with...
 * `config`: Create or Edit the configuration for...
-* `help`: Open and page the documentation for one or...
+* `explain`: Open and page the documentation for one or...
 
 ## `tfm version`
 
@@ -54,7 +54,7 @@ $ tfm unspine [OPTIONS] GENERATORS
 
 **Options**:
 
-* `--pretty / --no-pretty`: force activation markdown styling/ may cause issue on old terminals  [default: no-pretty]
+* `-p / --pretty`: force activation markdown styling/ may cause issue on old terminals
 * `--help`: Show this message and exit.
 
 ## `tfm doctor`
@@ -88,14 +88,14 @@ $ tfm parse [OPTIONS] FILE
 
 **Options**:
 
-* `-u, --user TEXT`: Database user name  [default: admin]
-* `-P, --password TEXT`: Database user password  [default: L2GI2025]
-* `-d, --database TEXT`: Database name  [default: tfm_generate]
-* `-t, --table TEXT`: The Database Table to target  [default: students]
+* `-u, --user TEXT`: Database user name 
+* `-P, --password TEXT`: Database user password 
+* `-d, --database TEXT`: Database name 
+* `-t, --table TEXT`: The Database Table to target 
 * `-h, --host TEXT`: The Databse host  [default: localhost]
 * `-p, --port INTEGER`: The database port  [default: 3306]
-* `-r, --rows INTEGER`: Number of rows to read (can be negative)  [default: 20]
-* `--preview-only / --no-preview-only`: If True tfm won&#x27;t try to fill the table, only preview them, default to False  [default: no-preview-only]
+* `-r, --rows INTEGER`: Number of rows to read (negative for all lines)  [default: 20]
+* `--preview-only / --no-preview-only`: If --preview tfm won&#x27;t try to fill the table, only preview them.  [default: no-preview-only]
 * `--help`: Show this message and exit.
 
 ## `tfm generate`
@@ -115,10 +115,10 @@ $ tfm generate [OPTIONS] FORMAT
 **Options**:
 
 * `-s, --seed INTEGER`: Seed for the random generator.
-* `-u, --user TEXT`: Database user name.  [default: admin]
-* `-P, --password TEXT`: Database user password.  [default: L2GI2025]
-* `-d, --database TEXT`: Database name.  [default: tfm_generate]
-* `-t, --table TEXT`: Database table name.  [default: students]
+* `-u, --user TEXT`: Database user name.
+* `-P, --password TEXT`: Database user password.
+* `-d, --database TEXT`: Database name.
+* `-t, --table TEXT`: Database table name.
 * `-h, --host TEXT`: Database host.  [default: localhost]
 * `-p, --port INTEGER`: Database port.  [default: 3306]
 * `--optimized / --no-optimized`: Use optimized generation methods.  [default: no-optimized]
@@ -126,6 +126,7 @@ $ tfm generate [OPTIONS] FORMAT
 * `--help`: Show this message and exit.
 
 ## `tfm config`
+
 
 Create or Edit the configuration for better use of tfm.
 
@@ -140,15 +141,16 @@ $ tfm config [OPTIONS]
 * `-v, --view`: View current configuration
 * `--help`: Show this message and exit.
 
-## `tfm help`
+## `tfm explain`
 
 Open and page the documentation for one or more commands from `docs/commands/README.<command>.md`.
 
 **Usage**:
 
 ```console
-$ tfm help [OPTIONS] COMMANDS
+$ tfm explain [OPTIONS] COMMANDS
 ```
+ 
 
 **Arguments**:
 
@@ -156,5 +158,5 @@ $ tfm help [OPTIONS] COMMANDS
 
 **Options**:
 
-* `--pretty / --no-pretty`: force activation markdown styling/ may cause issue on old terminals  [default: no-pretty]
+* `-p / --pretty`: force activation markdown styling/ may cause issue on old terminals.
 * `--help`: Show this message and exit.
