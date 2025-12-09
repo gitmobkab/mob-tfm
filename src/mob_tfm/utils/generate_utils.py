@@ -120,9 +120,12 @@ def parse_generator(expr: str) -> tuple[tfm_generator, dict]:
     tree = ast.parse(expr, mode='eval')
     node = tree.body
     
-    if not isinstance(node, ast.Call): # Not a function call
-        raise ValueError("The generator expression is not a function call")
+    if isinstance(node, ast.Name): # check if it's a generator name 
+        return get_generator(node.id),{}
     
+    if not isinstance(node, ast.Call):
+        raise ValueError("Expected a generator name")
+
     generator_name = node.func.id # type: ignore
     generator = get_generator(generator_name)
     arguments = {}
