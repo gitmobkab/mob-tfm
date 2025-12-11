@@ -78,10 +78,11 @@ def parse( file: Path,
     echo(f"Connection to {database} established","success")
     preview_table = Table("row",*columns_names,title=table,show_lines=True,highlight=True)
     exit_code = 0
+    count = 1
+    row_number = 1
     try:
         insert_query = build_insert_query(columns_names,table)
         with Live(preview_table):
-            count = 1
             # if rows is positive we loop until our count reach it, if rows is negative we never stop
             
             while count <= rows or rows < 0:

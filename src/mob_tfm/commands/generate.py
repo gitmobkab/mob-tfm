@@ -68,13 +68,13 @@ def generate(   format: str,
 
     echo(f"Connection to {database} esthablished","success")
     preview_table = Table("row",*names,title=table, caption="The World is a cruel thing" ,show_lines=True)
+    exit_code = 0
+    count = 1
+    row = 1
     try:
         with Live(preview_table):
-            exit_code = 0
             echo("Generating data...",mode="info")
-            count = 1
             while count <= rows:
-                row = count - 1
                 line : list[object] = []
                 for i in range(len(columns)):
                     line.append(run_column_generator(columns[i].generator,fake,**columns[i].args))
@@ -85,6 +85,7 @@ def generate(   format: str,
                 renderable_line = map(str,line)
                 preview_table.add_row(f"{count}",*renderable_line)
                 count += 1
+                row = count - 1
     except mariadb.Error as error:
         echo(f"Error while inserting data on row {row} into the database:\n{error}",mode="error")
         conn.rollback()
